@@ -1,0 +1,31 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3507
+
+This plugin allows you to send a range of lines from a buffer to another screen window. This could be used for all sorts of things but my motivation was to be able to edit SQL statements in a file and then send them to a open mysql client session in another window. You could also send ruby code to a running erb or bash commands to a bash prompt, etc. You could even use this as a quick way to paste between 2 vim sessions running in different windows (or even different screen sessions).
+
+The plugin creates some mapping by default. 
+
+In normal mode || sends the current line to another screen window. In visual modes use |.
+
+If you have a mapleader set you'll need to type that first for both mapings. See :help mapleader for more info on that.
+
+You can create you own mappings to override these. For the normal mode do this:
+
+nmap <whatever> <Plug>ScreenPipeSend
+
+For visual modes do this:
+
+vmap <whatever> <Plug>ScreenPipeOpSend
+
+Just replace <whatever> with what you want to map of course.
+
+Finally, this plugin also provides a :ScreenPipe command to do the same thing.
+
+The code is available on git here:
+
+https://github.com/bundacia/ScreenPipe
+
+KNOWN BUGS:
+1. The window list doesn't show up on the mac (but choosing the right number still works)
+
+TODO:
+1. Implement an operator.
